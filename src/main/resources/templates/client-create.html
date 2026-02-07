@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create client</title>
+</head>
+<body>
+<form action="#" th:action="@{/client-create}" th:object="${client}" method="post">
+    <label for="first_name">First name</label>
+    <input type="text" th:field="*{first_name}" id="first_name" placeholder="First Name">
+    <label for="last_name">Last name</label>
+    <input type="text" th:field="*{last_name}" id="last_name" placeholder="Last Name">
+    <label for="country_of_residence">Country</label>
+    <input type="text" th:field="*{country_of_residence}" id="country_of_residence" placeholder="Country">
+    <label for="city_of_residence">City</label>
+    <input type="text" th:field="*{city_of_residence}" id="city_of_residence" placeholder="City">
+    <label for="street_of_residence">Street</label>
+    <input type="text" th:field="*{street_of_residence}" id="street_of_residence" placeholder="Street">
+    <label for="year_of_birth">Year</label>
+    <input type="text" th:field="*{year_of_birth}" id="year_of_birth" placeholder="Year">
+    <input type="submit" value="Create Client">
+</form>
+</body>
+</html>

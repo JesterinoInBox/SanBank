@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Create client</title>
+<body>
+<form action="#" th:action="@{/client-update}" th:object="${client}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="first_name">First name</label>
+    <input type="text" th:field="*{first_name}" id="first_name" placeholder="First Name">
+    <br/>
+    <label for="last_name">Last name</label>
+    <input type="text" th:field="*{last_name}" id="last_name" placeholder="Last Name">
+    <br/>
+    <label for="country_of_residence">Country</label>
+    <input type="text" th:field="*{country_of_residence}" id="country_of_residence" placeholder="Country">
+    <br/>
+    <label for="city_of_residence">City</label>
+    <input type="text" th:field="*{city_of_residence}" id="city_of_residence" placeholder="City">
+    <br/>
+    <label for="street_of_residence">Street</label>
+    <input type="text" th:field="*{street_of_residence}" id="street_of_residence" placeholder="Street">
+    <br/>
+    <label for="year_of_birth">Year</label>
+    <input type="text" th:field="*{year_of_birth}" id="year_of_birth" placeholder="Year">
+    <br/>
+    <input type="submit" value="Update Client">
+</form>
+</body>
+</html>
