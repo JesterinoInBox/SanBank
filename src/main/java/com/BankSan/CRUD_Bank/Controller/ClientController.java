@@ -30,7 +30,7 @@ public class ClientController {
     }
 
     @GetMapping("/client-create")
-    public String createClientForm(Client client) {
+    public String createClientForm() {
         return "client-create";
     }
 
