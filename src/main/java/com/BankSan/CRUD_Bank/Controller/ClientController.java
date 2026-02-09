@@ -30,7 +30,8 @@ public class ClientController {
     }
 
     @GetMapping("/client-create")
-    public String createClientForm() {
+    public String createClientForm(Client client, Model model) {
+        model.addAttribute("client", client);
         return "client-create";
     }
 
