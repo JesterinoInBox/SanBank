@@ -2,6 +2,7 @@ package com.BankSan.CRUD_Bank.Controller;
 
 import com.BankSan.CRUD_Bank.Model.Client;
 import com.BankSan.CRUD_Bank.Service.ClientService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
+@Slf4j
 @Controller
 public class ClientController {
 
@@ -25,7 +27,6 @@ public class ClientController {
     public String findAll(Model model) {
         List<Client> clients = clientService.findAll();
         model.addAttribute("clients", clients);
-
         return "client-list";
     }
 
@@ -37,13 +38,26 @@ public class ClientController {
 
     @PostMapping("/client-create")
     public String createClient(Client client) {
-        clientService.saveClient(client);
+        try {
+            clientService.saveClient(client);
+            log.info("Сохранение клиента");
+        } catch (Exception e) {
+            log.info("Ошибка при создании");
+            throw new RuntimeException(e);
+        }
+
         return "redirect:/clients";
     }
 
     @GetMapping("/client-delete/{id}")
     public String deleteClient(@PathVariable("id") Long id) {
-        clientService.deleteById(id);
+        try {
+            clientService.deleteById(id);
+            log.info("Клиент удалён");
+        } catch (Exception e) {
+            log.info("Ошибка при удалении");
+            throw new RuntimeException(e);
+        }
         return "redirect:/clients";
     }
 
@@ -56,7 +70,13 @@ public class ClientController {
 
     @PostMapping("/client-update")
     public String updateClient(Client client) {
-        clientService.saveClient(client);
+        try {
+            clientService.saveClient(client);
+            log.info("Клиент обновлён");
+        } catch (Exception e) {
+            log.info("Ошибка при обновлении");
+            throw new RuntimeException(e);
+        }
         return "redirect:/clients";
     }
 }
