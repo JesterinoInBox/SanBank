@@ -1,5 +1,6 @@
 package com.BankSan.CRUD_Bank.Model;
 
+import com.BankSan.CRUD_Bank.Audit.Auditable;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

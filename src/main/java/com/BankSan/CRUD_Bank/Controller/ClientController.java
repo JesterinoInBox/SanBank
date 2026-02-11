@@ -1,5 +1,6 @@
 package com.BankSan.CRUD_Bank.Controller;
 
+import com.BankSan.CRUD_Bank.Kafka.KafkaProducer;
 import com.BankSan.CRUD_Bank.Model.Client;
 import com.BankSan.CRUD_Bank.Service.ClientService;
 import lombok.extern.slf4j.Slf4j;
@@ -17,10 +18,12 @@ import java.util.List;
 public class ClientController {
 
     private final ClientService clientService;
+    private final KafkaProducer kafkaProducer;
 
     @Autowired
-    public ClientController(ClientService clientService) {
+    public ClientController(ClientService clientService, KafkaProducer kafkaProducer) {
         this.clientService = clientService;
+        this.kafkaProducer = kafkaProducer;
     }
 
     @GetMapping("/clients")

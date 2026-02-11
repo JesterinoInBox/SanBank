@@ -1,4 +1,4 @@
-package com.BankSan.CRUD_Bank.Config;
+package com.BankSan.CRUD_Bank.Audit;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
