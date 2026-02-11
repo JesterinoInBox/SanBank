@@ -1,4 +1,4 @@
-package com.BankSan.CRUD_Bank.Model;
+package com.BankSan.CRUD_Bank.Audit;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
